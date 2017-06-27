@@ -1,7 +1,5 @@
 function Get-ITGlueConfigurationInterfaces {
-
-
-    [CmdletBinding(DefaultParameterSetName=”index”)]
+    [CmdletBinding(DefaultParametersetName=”index”)]
     Param (
         [Parameter()]
             [Nullable[Int]]$conf_id = $null,
