@@ -8,12 +8,12 @@ version: 0.0.{build}
 skip_commits:
   message: /updated readme.*/
 
-install:
-  - cinst pester
+#install:
+#  - cinst pester
 
 build: false
 
 test_script:
 # Test one-line deployment
-  - ps: . .\Tests\appveyor.pester.ps1 -Finalize
+  - ps: iex (New-Object Net.WebClient).DownloadString("https://gist.githubusercontent.com/CalebAlbers/582a06f352330479274892928a6b86ed/raw/e03e5e70fc271d3384a17084fd5974a6e95a2bd5/install-it-glue-api-module")
 # pester tests coming soon
