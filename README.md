@@ -69,7 +69,7 @@ Calling an API resource is as simple as running `Get-ITGlue<resourcename>`. The 
 | Configuration Types      |        | `Get-ITGlueConfigurationTypes`      |        | -      |
 | Configurations           |        | `Get-ITGlueConfigurations`          |        | -      |
 | Contact Types            |        | `Get-ITGlueContactTypes`            |        | -      |
-| Contacts                 |        | `Get-ITGlueCOntacts`                |        | -      |
+| Contacts                 |        | `Get-ITGlueContacts`                |        | -      |
 | Countries                |        | `Get-ITGlueCountries`               |        | -      |
 | Favorite Organizations   |        | `Get-ITGlueFavoriteOrganizations`   |        | -      |
 | Locations                |        | `Get-ITGlueLocations`               |        | -      |
@@ -88,6 +88,10 @@ Each `Get-` function will respond with the raw data that IT Glue's API provides.
  - `data` - The actual information requested (this is what most people care about)
  - `links` - Links to specific aspects of the data
  - `meta` - Information about the number of pages of results are available and other metadata.
+ 
+Each resource allows filters and parameters to be used to specify the desired output from IT Glue's API. Check out the wiki article on [Using Filters and Paramters](https://github.com/CalebAlbers/IT-Glue-API-PowerShell-Wrapper/wiki/Using-Filters-and-Parameters).
+
+For more information about using this module, as well as examples and advanced functionality, check out our [wiki](https://github.com/CalebAlbers/IT-Glue-API-PowerShell-Wrapper/wiki/)!
 
 ---
 
