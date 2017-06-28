@@ -33,7 +33,7 @@ Get-ITGlueUsers
 
 Installing the latest release can be achieved by running the following command:
 ```posh
-iex (New-Object Net.WebClient).DownloadString("https://gist.githubusercontent.com/CalebAlbers/582a06f352330479274892928a6b86ed/raw/bee2b0ebcbdbffd947ec49c18d143b9e99765781/install-it-glue-api-module")
+iex (New-Object Net.WebClient).DownloadString("https://gist.githubusercontent.com/CalebAlbers/582a06f352330479274892928a6b86ed/raw/c6f4c40a0ca2afc4f7db1e849157d4608c757463/install-it-glue-api-module")
 ```
 
 One can also manually download the Master branch and run the following PowerShell command:
@@ -47,13 +47,15 @@ Import-Module .\ITGlueAPI.psd1
 
 The first time you run this module, you will need to configure the base URI and API key that are used to talk with IT Glue. Doing so is as follows:
 
-1. Run `Set-ITGlueBaseURI`. By default, IT Glue's `api.itglue.com` uri is entered. If you have your own API gateway or proxy, you may put in your own custom uri by specifiying the `-uri` parameter, as follows: `Get-ITGlueBaseURI -uri http://myapi.gateway.examplecom`.
+1. Run `Add-ITGlueBaseURI`. By default, IT Glue's `api.itglue.com` uri is entered. If you have your own API gateway or proxy, you may put in your own custom uri by specifiying the `-uri` parameter, as follows: `Get-ITGlueBaseURI -uri http://myapi.gateway.examplecom`.
 
-2. Run `Set-ITGlueAPIKey`. It will prompt you to enter your API key (please refer to IT Glue's documentation [here](https://api.itglue.com/developer/) for creating generating API key).
+2. Run `Add-ITGlueAPIKey`. It will prompt you to enter your API key (please refer to IT Glue's documentation [here](https://api.itglue.com/developer/) for creating generating API key).
 
 3. [optional] If you would like the IT Glue module to remember your base uri and API key, you can run `Export-ITGlueModuleSettings`. This will create a config file at `Settings/config.psd1` that securely holds this information. Next time you run `Import-Module`, this configuration will automatically be loaded. 
 
 :warning: Exporting module settings encrypts your API key in a format that can **only be unencrypted with your Windows account**. It makes use of PowerShell's `System.Security.SecureString` type, which uses reversible encrypted tied to your principle. This means that you cannot copy your configuration file to another computer or user account and expect it to work.
+
+:warning: Exporting and importing module settings requires use of the `ConvertTo-SecureString` cmdlet, which is currently unavailable in Linux and Mac PowerShell core ports. Until PS Core 6.0.0 is available, this functionality only works on Windows.
 
 
 ## Usage
