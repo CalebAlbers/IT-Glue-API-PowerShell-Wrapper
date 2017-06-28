@@ -1,0 +1,19 @@
+#---------------------------------#
+#      general configuration      #
+#---------------------------------#
+
+# version format
+version: 0.0.{build}
+
+skip_commits:
+  message: /updated readme.*/
+
+install:
+  - cinst pester
+
+build: false
+
+test_script:
+# Test one-line deployment
+  - ps: . .\Tests\appveyor.pester.ps1 -Finalize
+# pester tests coming soon
