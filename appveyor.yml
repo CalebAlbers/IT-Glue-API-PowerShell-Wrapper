@@ -15,5 +15,5 @@ build: false
 
 test_script:
 # Test one-line deployment
-  - ps: iex (New-Object Net.WebClient).DownloadString("https://gist.githubusercontent.com/CalebAlbers/582a06f352330479274892928a6b86ed/raw/c6f4c40a0ca2afc4f7db1e849157d4608c757463/install-it-glue-api-module")
+  - ps: iex (New-Object Net.WebClient).DownloadString("https://gist.githubusercontent.com/CalebAlbers/582a06f352330479274892928a6b86ed/raw/e03e5e70fc271d3384a17084fd5974a6e95a2bd5/install-it-glue-api-module")
 # pester tests coming soon
