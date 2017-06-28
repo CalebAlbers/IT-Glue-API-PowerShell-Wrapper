@@ -91,6 +91,8 @@ Each `Get-` function will respond with the raw data that IT Glue's API provides.
  
 Each resource allows filters and parameters to be used to specify the desired output from IT Glue's API. Check out the wiki article on [Using Filters and Paramters](https://github.com/CalebAlbers/IT-Glue-API-PowerShell-Wrapper/wiki/Using-Filters-and-Parameters).
 
+## :book: Wiki
+
 For more information about using this module, as well as examples and advanced functionality, check out our [wiki](https://github.com/CalebAlbers/IT-Glue-API-PowerShell-Wrapper/wiki/)!
 
 ---
