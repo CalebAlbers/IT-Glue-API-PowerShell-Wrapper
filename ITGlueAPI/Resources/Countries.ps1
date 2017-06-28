@@ -1,6 +1,5 @@
 function Get-ITGlueCountries {
-
-    [CmdletBinding(DefaultParameterSetName=”index”)]
+    [CmdletBinding(DefaultParameterSetName="index")]
     Param (
         [Parameter(ParameterSetName="index")]
             [String]$filter_name = "",

@@ -1,7 +1,5 @@
 function Get-ITGlueConfigurations {
-
-
-    [CmdletBinding(DefaultParameterSetName=”index”)]
+    [CmdletBinding(DefaultParameterSetName="index")]
     Param (
 
         [Parameter()]

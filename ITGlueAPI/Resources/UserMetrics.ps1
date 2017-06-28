@@ -1,6 +1,5 @@
 function Get-ITGlueUserMetrics {
-    
-    [CmdletBinding(DefaultParameterSetName=”index”)]
+    [CmdletBinding(DefaultParameterSetName="index")]
     Param (
         [Parameter(ParameterSetName="index")]
             [Nullable[Int]]$filter_user_id = $null,

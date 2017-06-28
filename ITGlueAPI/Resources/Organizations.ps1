@@ -1,7 +1,5 @@
 function Get-ITGlueOrganizations {
-
-
-    [CmdletBinding(DefaultParameterSetName=”index”)]
+    [CmdletBinding(DefaultParameterSetName="index")]
     Param (
         [Parameter(ParameterSetName="index")]
             [String]$filter_name = "",

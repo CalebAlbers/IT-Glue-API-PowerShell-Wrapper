@@ -1,7 +1,5 @@
 function Get-ITGlueModels {
-
-
-    [CmdletBinding(DefaultParameterSetName=”index”)]
+    [CmdletBinding(DefaultParameterSetName="index")]
     Param (
         [Parameter()]
             [Nullable[Int]]$manufacturer_id = $null,

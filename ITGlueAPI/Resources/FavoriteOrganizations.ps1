@@ -1,6 +1,5 @@
 function Get-ITGlueFavoriteOrganizations {
-
-    [CmdletBinding(DefaultParameterSetName=”index”)]
+    [CmdletBinding(DefaultParameterSetName="index")]
     Param (
         [Parameter(ParameterSetName="index")]
             [Parameter(Mandatory=$true)]

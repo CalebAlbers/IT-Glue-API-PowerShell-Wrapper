@@ -1,7 +1,5 @@
 function Get-ITGlueLocations {
-
-
-    [CmdletBinding(DefaultParameterSetName=”index”)]
+    [CmdletBinding(DefaultParameterSetName="index")]
     Param (
         [Parameter()]
             [Nullable[Int]]$org_id = $null,

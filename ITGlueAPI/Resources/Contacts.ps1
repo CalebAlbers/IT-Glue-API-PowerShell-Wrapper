@@ -1,6 +1,5 @@
 function Get-ITGlueContacts {
-
-    [CmdletBinding(DefaultParameterSetName=”index”)]
+    [CmdletBinding(DefaultParameterSetName="index")]
     Param (
         [Parameter()]
             [Nullable[Int]]$country_id = $null,
