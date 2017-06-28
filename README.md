@@ -35,7 +35,7 @@ Get-ITGlueUsers
 
 Installing the latest release can be achieved by running the following command:
 ```posh
-iex (New-Object Net.WebClient).DownloadString("https://gist.githubusercontent.com/CalebAlbers/582a06f352330479274892928a6b86ed/raw/c6f4c40a0ca2afc4f7db1e849157d4608c757463/install-it-glue-api-module")
+iex (New-Object Net.WebClient).DownloadString("https://gist.githubusercontent.com/CalebAlbers/582a06f352330479274892928a6b86ed/raw/e03e5e70fc271d3384a17084fd5974a6e95a2bd5/install-it-glue-api-module")
 ```
 
 One can also manually download the Master branch and run the following PowerShell command:
