@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/wa7jhl4dxrumrq5d/branch/master?svg=true)](https://ci.appveyor.com/project/CalebAlbers/it-glue-api-powershell-wrapper/branch/master)
+
 # IT-Glue-API-PowerShell-Wrapper
 This PowerShell module acts as a wrapper for the IT Glue (http://itglue.com) API.
 
