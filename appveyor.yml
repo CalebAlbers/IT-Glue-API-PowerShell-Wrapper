@@ -8,8 +8,8 @@ version: 0.0.{build}
 skip_commits:
   message: /updated readme.*/
 
-install:
-  - cinst pester
+#install:
+#  - cinst pester
 
 build: false
 
