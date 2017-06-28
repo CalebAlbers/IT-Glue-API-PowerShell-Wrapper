@@ -2,18 +2,23 @@ function Get-ITGlueFavoriteOrganizations {
     [CmdletBinding(DefaultParameterSetName="index")]
     Param (
         [Parameter(ParameterSetName="index")]
-            [Parameter(Mandatory=$true)]
-            [Int]$user_id,
+        [Parameter(Mandatory=$true)]
+        [Int]$user_id,
 
-            [ValidateSet( "id",  "organization_id", "organization_name", `
-                        "-id", "-organization_id","-organization_name")]
-            [String]$sort = "",
+        [Parameter(ParameterSetName="index")]
+        [ValidateSet( "id",  "organization_id", "organization_name", `
+                     "-id", "-organization_id","-organization_name")]
+        [String]$sort = "",
 
-            [Nullable[Int]]$page_number = $null,
-            [Nullable[int]]$page_size = $null,
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$page_number = $null,
 
-            [ValidateSet("organization")]
-            [String]$include
+        [Parameter(ParameterSetName="index")]
+        [Nullable[int]]$page_size = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [ValidateSet("organization")]
+        [String]$include
     )
 
     $resource_uri = "/users/${user_id}/relationships/favorite_organizations"

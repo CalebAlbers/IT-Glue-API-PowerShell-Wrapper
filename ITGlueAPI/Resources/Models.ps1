@@ -1,16 +1,20 @@
 function Get-ITGlueModels {
     [CmdletBinding(DefaultParameterSetName="index")]
     Param (
-        [Parameter()]
-            [Nullable[Int]]$manufacturer_id = $null,
+        [Parameter(ParameterSetName="index")]
+        [Parameter(ParameterSetName="show")]
+        [Nullable[Int]]$manufacturer_id = $null,
 
         [Parameter(ParameterSetName="index")]
-            [ValidateSet( "id",  "name",  "manufacturer_id", `
-                        "-id", "-name", "-manufacturer_id")]
-            [String]$sort = "",
+        [ValidateSet( "id",  "name",  "manufacturer_id", `
+                     "-id", "-name", "-manufacturer_id")]
+        [String]$sort = "",
 
-            [Nullable[Int]]$page_number = $null,
-            [Nullable[int]]$page_size = $null,
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$page_number = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[int]]$page_size = $null,
 
         [Parameter(ParameterSetName="show")]
             [Nullable[Int]]$id = $null

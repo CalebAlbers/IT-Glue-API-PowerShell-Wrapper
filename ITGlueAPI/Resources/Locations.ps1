@@ -1,23 +1,32 @@
 function Get-ITGlueLocations {
     [CmdletBinding(DefaultParameterSetName="index")]
     Param (
-        [Parameter()]
-            [Nullable[Int]]$org_id = $null,
+        [Parameter(ParameterSetName="index")]
+        [Parameter(ParameterSetName="show")]
+        [Nullable[Int]]$org_id = $null,
 
         [Parameter(ParameterSetName="index")]
-            [String]$filter_name = "",
-            [Nullable[Int]]$filter_region_id = "",
-            [Nullable[Int]]$filter_country_id = "",
+        [String]$filter_name = "",
 
-            [ValidateSet( "name",  "id", `
-                        "-name", "-id")]
-            [String]$sort = "",
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$filter_region_id = "",
 
-            [Nullable[Int]]$page_number = $null,
-            [Nullable[int]]$page_size = $null,
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$filter_country_id = "",
+
+        [Parameter(ParameterSetName="index")]
+        [ValidateSet( "name",  "id", `
+                     "-name", "-id")]
+        [String]$sort = "",
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$page_number = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[int]]$page_size = $null,
 
         [Parameter(ParameterSetName="show")]
-            [Nullable[Int]]$id = $null
+        [Nullable[Int]]$id = $null
     )
 
     $resource_uri = "/locations/${id}"

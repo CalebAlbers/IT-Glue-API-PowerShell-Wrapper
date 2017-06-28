@@ -1,25 +1,38 @@
 function Get-ITGlueContacts {
     [CmdletBinding(DefaultParameterSetName="index")]
     Param (
-        [Parameter()]
-            [Nullable[Int]]$country_id = $null,
+        [Parameter(ParameterSetName="index")]
+        [Parameter(ParameterSetName="show")]
+        [Nullable[Int]]$country_id = $null,
 
         [Parameter(ParameterSetName="index")]
-            [String]$filter_first_name = "",
-            [String]$filter_last_name = "",
-            [String]$filter_title = "",
-            [Nullable[Int]]$filter_contact_type_id = $null,
-            [String]$filter_important = "",
+        [String]$filter_first_name = "",
 
-            [ValidateSet( "name",  "id", `
-                        "-name", "-id")]
-            [String]$sort = "",
+        [Parameter(ParameterSetName="index")]
+        [String]$filter_last_name = "",
 
-            [Nullable[Int]]$page_number = $null,
-            [Nullable[int]]$page_size = $null,
+        [Parameter(ParameterSetName="index")]
+        [String]$filter_title = "",
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$filter_contact_type_id = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [String]$filter_important = "",
+
+        [Parameter(ParameterSetName="index")]
+        [ValidateSet( "name",  "id", `
+                     "-name", "-id")]
+        [String]$sort = "",
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$page_number = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[int]]$page_size = $null,
 
         [Parameter(ParameterSetName="show")]
-            [Nullable[Int]]$id = $null
+        [Nullable[Int]]$id = $null
     )
 
     $resource_uri = "/contacts/${id}"

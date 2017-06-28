@@ -1,26 +1,39 @@
 function Get-ITGlueConfigurations {
     [CmdletBinding(DefaultParameterSetName="index")]
     Param (
-
-        [Parameter()]
-            [Nullable[Int]]$id,
+        [Parameter(ParameterSetName="index")]
+        [Parameter(ParameterSetName="show")]
+        [Nullable[Int]]$id,
 
         [Parameter(ParameterSetName="index")]
-            [String]$filter_name = "",
+        [String]$filter_name = "",
 
-            [Nullable[Int]]$filter_organization_id = $null,
-            [Nullable[Int]]$filter_configuration_type_id = $null,
-            [Nullable[Int]]$filter_configuration_status_id = $null,
-            [String]$filter_serial_number = "",
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$filter_organization_id = $null,
 
-            [String]$sort = "",
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$filter_configuration_type_id = $null,
 
-            [Nullable[Int]]$page_number = $null,
-            [Nullable[int]]$page_size = $null,
-            [String]$include = "",
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$filter_configuration_status_id = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [String]$filter_serial_number = "",
+
+        [Parameter(ParameterSetName="index")]
+        [String]$sort = "",
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$page_number = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[int]]$page_size = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [String]$include = "",
 
         [Parameter(ParameterSetName="show")]
-            [Nullable[Int]]$organization_id = $null
+        [Nullable[Int]]$organization_id = $null
     )
 
     $resource_uri = "/configurations/${id}"

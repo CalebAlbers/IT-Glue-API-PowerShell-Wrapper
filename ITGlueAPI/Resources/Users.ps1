@@ -2,21 +2,28 @@ function Get-ITGlueUsers {
     [CmdletBinding(DefaultParameterSetName="index")]
     Param (
         [Parameter(ParameterSetName="index")]
-            [String]$filter_name = "",
-            [String]$filter_email = "",
+        [String]$filter_name = "",
 
-            [ValidateSet("Administrator", "Manager", "Editor", "Creator", "Lite", "Read-only")]
-            [String]$filter_role_name = "",
+        [Parameter(ParameterSetName="index")]
+        [String]$filter_email = "",
 
-            [ValidateSet( "name",  "email",  "reputation",  "id", "created_at", "updated-at", `
-                        "-name", "-email", "-reputation", "-id","-created_at","-updated-at")]
-            [String]$sort = "",
+        [Parameter(ParameterSetName="index")]
+        [ValidateSet("Administrator", "Manager", "Editor", "Creator", "Lite", "Read-only")]
+        [String]$filter_role_name = "",
 
-            [Nullable[Int]]$page_number = $null,
-            [Nullable[int]]$page_size = $null,
+        [Parameter(ParameterSetName="index")]
+        [ValidateSet( "name",  "email",  "reputation",  "id", "created_at", "updated-at", `
+                     "-name", "-email", "-reputation", "-id","-created_at","-updated-at")]
+        [String]$sort = "",
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$page_number = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[int]]$page_size = $null,
 
         [Parameter(ParameterSetName="show")]
-            [Nullable[Int]]$id = $null
+        [Nullable[Int]]$id = $null
     )
 
     $resource_uri = "/users/${id}"

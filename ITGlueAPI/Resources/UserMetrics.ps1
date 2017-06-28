@@ -2,17 +2,27 @@ function Get-ITGlueUserMetrics {
     [CmdletBinding(DefaultParameterSetName="index")]
     Param (
         [Parameter(ParameterSetName="index")]
-            [Nullable[Int]]$filter_user_id = $null,
-            [Nullable[Int]]$filter_organization_id = $null,
-            [String]$filter_resource_type = "",
-            [String]$filter_date = "",
+        [Nullable[Int]]$filter_user_id = $null,
 
-            [ValidateSet( "created",  "viewed",  "edited",  "deleted", "date", `
-                        "-created", "-viewed", "-edited", "-deleted","-date")]
-            [String]$sort = "",
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$filter_organization_id = $null,
 
-            [Nullable[Int]]$page_number = $null,
-            [Nullable[int]]$page_size = $null
+        [Parameter(ParameterSetName="index")]
+        [String]$filter_resource_type = "",
+
+        [Parameter(ParameterSetName="index")]
+        [String]$filter_date = "",
+
+        [Parameter(ParameterSetName="index")]
+        [ValidateSet( "created",  "viewed",  "edited",  "deleted", "date", `
+                     "-created", "-viewed", "-edited", "-deleted","-date")]
+        [String]$sort = "",
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$page_number = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[int]]$page_size = $null
     )
 
     $resource_uri = "/user_metrics"

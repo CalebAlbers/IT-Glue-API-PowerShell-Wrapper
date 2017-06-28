@@ -2,23 +2,36 @@ function Get-ITGlueOrganizations {
     [CmdletBinding(DefaultParameterSetName="index")]
     Param (
         [Parameter(ParameterSetName="index")]
-            [String]$filter_name = "",
-            [Nullable[Int]]$filter_organization_type_id = $null,
-            [Nullable[Int]]$filter_organization_status_id = $null,
-            [String]$filter_exclude_name = "",
-            [Nullable[Int]]$filter_exclude_organization_type_id = $null,
-            [Nullable[Int]]$filter_exclude_organization_status_id = $null,
+        [String]$filter_name = "",
 
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$filter_organization_type_id = $null,
 
-            [ValidateSet( "name",  "id",  "updated-at",  "organization_status_name",  "organization_type_name", `
-                         "-name", "-id", "-updated-at", "-organization_status_name", "-organization_type_name")]
-            [String]$sort = "",
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$filter_organization_status_id = $null,
 
-            [Nullable[Int]]$page_number = $null,
-            [Nullable[int]]$page_size = $null,
+        [Parameter(ParameterSetName="index")]
+        [String]$filter_exclude_name = "",
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$filter_exclude_organization_type_id = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$filter_exclude_organization_status_id = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [ValidateSet( "name",  "id",  "updated-at",  "organization_status_name",  "organization_type_name", `
+                     "-name", "-id", "-updated-at", "-organization_status_name", "-organization_type_name")]
+        [String]$sort = "",
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$page_number = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[int]]$page_size = $null,
 
         [Parameter(ParameterSetName="show")]
-            [Nullable[Int]]$id = $null
+        [Nullable[Int]]$id = $null
     )
 
     $resource_uri = "/organizations/${id}"

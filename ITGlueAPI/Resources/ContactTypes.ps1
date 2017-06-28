@@ -2,17 +2,21 @@ function Get-ITGlueContactTypes {
     [CmdletBinding(DefaultParameterSetName="index")]
     Param (
         [Parameter(ParameterSetName="index")]
-            [String]$filter_name = "",
+        [String]$filter_name = "",
 
-            [ValidateSet( "name",  "id", `
-                        "-name", "-id")]
-            [String]$sort = "",
+        [Parameter(ParameterSetName="index")]
+        [ValidateSet( "name",  "id", `
+                     "-name", "-id")]
+        [String]$sort = "",
 
-            [Nullable[Int]]$page_number = $null,
-            [Nullable[int]]$page_size = $null,
+        [Parameter(ParameterSetName="index")]
+        [Nullable[Int]]$page_number = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[int]]$page_size = $null,
 
         [Parameter(ParameterSetName="show")]
-            [Nullable[Int]]$id = $null
+        [Nullable[Int]]$id = $null
     )
 
     $resource_uri = "/contact_types/${id}"

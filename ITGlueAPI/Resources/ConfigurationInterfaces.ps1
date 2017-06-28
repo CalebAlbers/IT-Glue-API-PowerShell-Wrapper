@@ -1,15 +1,18 @@
 function Get-ITGlueConfigurationInterfaces {
     [CmdletBinding(DefaultParametersetName="index")]
     Param (
-        [Parameter()]
-            [Nullable[Int]]$conf_id = $null,
+        [Parameter(ParameterSetName="index")]
+        [Parameter(ParameterSetName="show")]
+        [Nullable[Int]]$conf_id = $null,
 
         [Parameter(ParameterSetName="index")]
-            [Nullable[Int]]$page_number = $null,
-            [Nullable[int]]$page_size = $null,
+        [Nullable[Int]]$page_number = $null,
+
+        [Parameter(ParameterSetName="index")]
+        [Nullable[int]]$page_size = $null,
 
         [Parameter(ParameterSetName="show")]
-            [Nullable[Int]]$id = $null
+        [Nullable[Int]]$id = $null
     )
 
     $resource_uri = "/configurations/${conf_id}/relationships/configuration_interfaces/${id}"
