@@ -1,3 +1,16 @@
+:warning:
+
+
+### This project has been permanently moved to https://github.com/itglue/powershellwrapper in hopes of obtaining greater community involvement. Please use that repo for any issues, feature requests, contributions, pull requests, and to access the latest available code (including the much anticipated support for flex assets). This repo will remain online for the near future to serve as a point of reference.
+
+
+
+:warning:
+
+---
+---
+---
+---
 [![Build status](https://ci.appveyor.com/api/projects/status/wa7jhl4dxrumrq5d/branch/master?svg=true)](https://ci.appveyor.com/project/CalebAlbers/it-glue-api-powershell-wrapper/branch/master)
 
 # IT-Glue-API-PowerShell-Wrapper
